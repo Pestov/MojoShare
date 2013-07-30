@@ -1,0 +1,825 @@
+@font-face {
+	font-family: 'MojoSocial';
+	src:url('fonts/MojoSocial.eot');
+	src:url('fonts/MojoSocial.eot?#iefix') format('embedded-opentype'),
+		url('fonts/MojoSocial.woff') format('woff'),
+		url('fonts/MojoSocial.ttf') format('truetype'),
+		url('fonts/MojoSocial.svg#MojoSocial') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[data-icon]:before {
+	font-family: 'MojoSocial';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+// @GlobalConfig
+
+  // Config supported browsers for your project
+
+    @w3c: true; // Unprefixed W3C syntax
+    @webkit: true; // Chrome 7+, Safari 5+, iOS5, Android
+    @moz: true; // Firefox 4+
+    @opera: true; // Opera 10.5+
+    @ms: true; // IE 10+
+
+  // Signals
+
+    @webkitSignal: 1;
+    @mozSignal: 2;
+    @operaSignal: 3;
+    @msSignal: 4;
+    @w3cSignal: 5;
+  .background-image(...){
+
+      // Local config for disabling properties
+
+      @svg: true; // SVG gradient for IE9
+      @mozLocal: true; // Firefox 4+
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5+, Android
+      @operaLocal: true; // Opera 10.5+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      
+      @backgroundSVG: ~`(function(){function K(a){var b="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",c,d,e,f,g,h,i,j,k=0,l=0,m="",n=[];if(!a)return a;do c=a.charCodeAt(k++),d=a.charCodeAt(k++),e=a.charCodeAt(k++),j=c<<16|d<<8|e,f=j>>18&63,g=j>>12&63,h=j>>6&63,i=j&63,n[l++]=b.charAt(f)+b.charAt(g)+b.charAt(h)+b.charAt(i);while(k<a.length);m=n.join("");var o=a.length%3;return(o?m.slice(0,o-3):m)+"===".slice(o||3)}String.prototype.trim===undefined&&(String.prototype.trim=function(){return this.replace(/^\s+/,"").replace(/\s+$/,"")});var a="@{arguments}",b=null,c=!0,d=a.split(/,(?=\s*(?:linear|radial))/g),e=d.length,f=/top/,g=/right/,h=/bottom/,i=/left/,j=/to\s*top/,k=/to\s*right/,l=/to\s*bottom/,m=/to\s*left/,n=/45deg/,o=/-45deg/,p=/\d*deg/;for(var q=0;q<e;q++){if(/linear/.test(d[q])){d[q]=d[q].replace(/linear-gradient\s*\(/,'<?xml version="1.0" ?><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none">');if(f.test(d[q])&&!j.test(d[q])||l.test(d[q])||/180deg/.test(d[q])){var r=null;l.test(d[q])?r=l:/180deg/.test(d[q])?r=/180deg/:r=f,d[q]=d[q].replace(r,'<linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%">')}else if(g.test(d[q])&&!k.test(d[q])||m.test(d[q])||/270deg/.test(d[q])){var r=null;m.test(d[q])?r=m:/270deg/.test(d[q])?r=/270deg/:r=g,d[q]=d[q].replace(r,'<linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="100%" y1="0%" x2="0%" y2="0%">')}else if(h.test(d[q])&&!l.test(d[q])||j.test(d[q])||/[^\d]0deg/.test(d[q])){var r=null;j.test(d[q])?r=j:/0deg/.test(d[q])?r=/0deg/:r=h,d[q]=d[q].replace(r,'<linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="0%" y1="100%" x2="0%" y2="0%">')}else if(i.test(d[q])&&!m.test(d[q])||k.test(d[q])||/90deg/.test(d[q])){var r=null;k.test(d[q])?r=k:/90deg/.test(d[q])?r=/90deg/:r=i,d[q]=d[q].replace(r,'<linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="100%" y2="0%">')}else n.test(d[q])&&!o.test(d[q])?d[q]=d[q].replace(n,'<linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="0%" y1="100%" x2="100%" y2="0%">'):o.test(d[q])?d[q]=d[q].replace(o,'<linearGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="100%" y2="100%">'):c=!1}try{"".trim(),b=!0}catch(s){b=!1}b&&(d[q]=d[q].trim());if(/linear/.test(d[q])||/radial/.test(d[q])){d[q]=d[q].slice(0,-1),d[q]="url(data:image/svg+xml;base64--"+d[q]+'</linearGradient><rect x="0" y="0" width="1" height="1" fill="url(***)" /></svg>)';var t=d.join("@@@"),u=t.match(/rgba?\(\d+,\s*\d+,\s*\d+,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g)||0,v=t.match(/hsla?\(\d+,\s*\d+%,\s*\d+%,\s*(?:0|1|\.\d+|0\.\d+)\)\s*\d*%*/g)||0,w=[],x=[];for(var y=0;y<u.length;y++)w[y]=u[y].replace(/,/g,"--");for(var z=0;z<v.length;z++)x[z]=v[z].replace(/,/g,"--");for(var A=0;A<u.length;A++)t=t.replace(u[A],w[A]);for(var B=0;B<v.length;B++)t=t.replace(v[B],x[B]);var C=t.split(","),D=0;for(var E=0;E<C.length;E++){C[E]=C[E].replace(/(#\w{3,6})\s*(\d*.?\d*%)?/g,'<stop offset="$2" stop-color="$1" stop-opacity="1"/>').replace(/(rgba?\(\d+--\s*\d+--\s*\d+--\s*(0|1|\.\d+|0\.\d+)\))\s*(\d*.?\d*%)*/g,'<stop offset="$3" stop-color="$1" stop-opacity="$2"/>').replace(/rgba/g,"rgb").replace(/(hsla?\(\d+--\s*\d+%--\s*\d+%--\s*(0|1|\.\d+|0\.\d+)\))\s*(\d*.?\d*%)*/g,'<stop offset="$3" stop-color="$1" stop-opacity="$2"/>').replace(/hsla/g,"hsl").replace(/((?:aqua|black|blue|fuchsia|gray|grey|green|lime|maroon|navy|olive|purple|red|silver|teal|white|yellow))\s*(\d*%)*/g,'<stop offset="$2" stop-color="$1" stop-opacity="1"/>').replace(/\*\*\*/,"#grad-ucgg-generated");try{"".trim(),b=!0}catch(s){b=!1}b&&(C[E]=C[E].trim());if(/offset=""/g.test(C[E])){var F=C.length-2,G=Math.round(100/F)*D;var H='offset="'+G+'%"';C[E]=C[E].replace(/offset=""/,H),D++}}C=C.toString().replace(/,/g,"").replace(/--/g,",").replace(/(rgb?\(\d+,\s*\d+,\s*\d+),\s*(?:0|1|\.\d+|0\.\d+)\)/g,"$1)").replace(/(hsl?\(\d+,\s*\d+%,\s*\d+%),\s*(?:0|1|\.\d+|0\.\d+)\)/g,"$1)")}}/radial/.test(C)&&(/((ellipse).*(center)|(circle).*(center))/g.test(C)?C=C.replace(/<\/linearGradient>/g,"</radialGradient>").replace(/radial-gradient[^<]+/g,'<?xml version="1.0" ?><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none"><radialGradient id="grad-ucgg-generated" gradientUnits="userSpaceOnUse" cx="50%" cy="50%" r="75%">').replace(/<rect x=\S+\d\S+ y=\S+\d\S+ width=\S+\d\S+ height=\S+\d\S+ fill=\S+\w\S+ \/>/g,'<rect x="-50" y="-50" width="101" height="101" fill="url(#grad-ucgg-generated)" />'):C=!1);var I=null;try{C=C.split("@@@");var J=0;for(J;J<C.length;J++)I=C[J].match(/<\?xml.*<\/svg>/),I=K(I.join("")),C[J]=C[J].replace(/(<\?xml.*<\/svg>)/,I)}catch(s){}return c?C:C=!1,C?C.toString():C})()`;
+      @backgroundMoz: ~`(function(){var a,b,c,d,e,f,g,h,i,j,k;a="@{arguments}",c=null,d=a.split(/,(?=\s*(?:linear|radial))/g),e=d.length,k=/to\s*top/,j=/to\s*right/,h=/to\s*bottom/,i=/to\s*left/,b=/\d*deg/,f=0;while(f<e){/linear/.test(d[f])?(d[f]=d[f].replace(/linear-gradient/,"-moz-linear-gradient"),k.test(d[f])?d[f]=d[f].replace(k,"bottom"):j.test(d[f])?d[f]=d[f].replace(j,"left"):h.test(d[f])?d[f]=d[f].replace(h,"top"):i.test(d[f])?d[f]=d[f].replace(i,"right"):b.test(d[f])&&(g=d[f].match(/\d*deg/),g=(parseInt(g)-90)*-1+"deg",d[f]=d[f].replace(b,g))):d[f]=d[f].replace(/radial-gradient/,"-moz-radial-gradient").replace(/,\s* \d*(px|%) \d*(px|%)/,", circle").replace(/\(+\s*(.*) at\s*([^,]+)/g,"($2, $1");try{"".trim(),c=!0}catch(l){c=!1}c&&(d[f]=d[f].trim()),f++}return d.toString().replace(/\[/g,"").replace(/\]/g,"")}())`;
+      @backgroundWebkit: ~`(function(){var a,b,c,d,e,f,g,h,i,j,k;a="@{arguments}",c=null,d=a.split(/,(?=\s*(?:linear|radial))/g),e=d.length,k=/to\s*top/,j=/to\s*right/,h=/to\s*bottom/,i=/to\s*left/,b=/\d*deg/,f=0;while(f<e){/linear/.test(d[f])?(d[f]=d[f].replace(/linear-gradient/,"-webkit-linear-gradient"),k.test(d[f])?d[f]=d[f].replace(k,"bottom"):j.test(d[f])?d[f]=d[f].replace(j,"left"):h.test(d[f])?d[f]=d[f].replace(h,"top"):i.test(d[f])?d[f]=d[f].replace(i,"right"):b.test(d[f])&&(g=d[f].match(/\d*deg/),g=(parseInt(g)-90)*-1+"deg",d[f]=d[f].replace(b,g))):d[f]=d[f].replace(/radial-gradient/,"-webkit-radial-gradient").replace(/\(+\s*(.*) at\s*([^,]+)/g,"($2, $1");try{"".trim(),c=!0}catch(l){c=!1}c&&(d[f]=d[f].trim()),f++}return d.toString().replace(/\[/g,"").replace(/\]/g,"");}())`;
+      @backgroundOpera: ~`(function(){var a,b,c,d,e,f,g,h,i,j,k;a="@{arguments}",c=null,d=a.split(/,(?=\s*(?:linear|radial))/g),e=d.length,k=/to\s*top/,j=/to\s*right/,h=/to\s*bottom/,i=/to\s*left/,b=/\d*deg/,f=0;while(f<e){/linear/.test(d[f])?(d[f]=d[f].replace(/linear-gradient/,"-o-linear-gradient"),k.test(d[f])?d[f]=d[f].replace(k,"bottom"):j.test(d[f])?d[f]=d[f].replace(j,"left"):h.test(d[f])?d[f]=d[f].replace(h,"top"):i.test(d[f])?d[f]=d[f].replace(i,"right"):b.test(d[f])&&(g=d[f].match(/\d*deg/),g=(parseInt(g)-90)*-1+"deg",d[f]=d[f].replace(b,g))):d[f]=d[f].replace(/radial-gradient/,"-o-radial-gradient").replace(/\(+\s*(.*) at\s*([^,]+)/g,"($2, $1");try{"".trim(),c=!0}catch(l){c=!1}c&&(d[f]=d[f].trim()),f++}return d.toString().replace(/\[/g,"").replace(/\]/g,"");})()`;
+      @backgroundW3C: ~`(function(){var a,b,c,d,e;a="@{arguments}",b=null,c=a.split(/,(?=\s*(?:linear|radial))/g),d=c.length,e=0;while(e<d){try{"".trim(),b=!0}catch(f){b=!1}b&&(c[e]=c[e].trim()),e++}return c.toString().replace(/\[/g,"").replace(/\]/g,"");}())`;
+
+      .result(@arguments, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) { background-image: @arguments; }
+      .result(@arguments, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+      .result(@arguments, @boolean, @localBoolean, @property) when (@boolean = true) and (@localBoolean = true) and (isstring(@property)) { background-image: @arguments; }
+      .result(@arguments, @boolean, @localBoolean, @property) when not (@boolean = true), not (@localBoolean = true), not (isstring(@property)) { }
+
+      .result(@backgroundSVG, @svg, @svg, @backgroundSVG);
+      // -- this comment must be here because of LESS bug
+      .result(@backgroundMoz, @moz, @mozLocal);
+      // --
+      .result(@backgroundWebkit, @webkit, @webkitLocal);
+      // --
+      .result(@backgroundOpera, @opera, @operaLocal);
+      // --
+      .result(@backgroundW3C, @w3c, @w3cLocal);
+  }
+
+.border-radius(@arguments:0) {
+
+      // Local config for disabling properties
+
+      @w3cLocal: true; // Unprefixed W3C syntax
+      @webkitLocal: true; // Chrome 7+, Safari 5+, iOS5, Android
+      @mozLocal: true; // Firefox 4+
+
+      .result (@arguments, @signal, @boolean, @localBoolean) when (@boolean = true) and (@localBoolean = true) {
+        .inception (@signal, @arguments) when (@signal = 1) { -webkit-border-radius: @arguments; -webkit-background-clip: padding-box;}
+        .inception (@signal, @arguments) when (@signal = 2) { -moz-border-radius: @arguments; -moz-background-clip: padding;}
+        .inception (@signal, @arguments) when (@signal = 5) { border-radius: @arguments; background-clip: padding-box; }
+        .inception (@signal, @arguments) when (@signal > 5),(@signal < 1) { error: "Signal is out of range"; }
+        .inception(@signal, @arguments);
+      }
+      .result (@arguments, @signal, @boolean, @localBoolean) when not (@boolean = true), not (@localBoolean = true) { }
+
+      .result(@arguments, @webkitSignal, @webkit, @webkitLocal);
+      // -- this comment must be here because of LESS bug
+      .result(@arguments, @mozSignal, @moz, @mozLocal);
+      // --
+      .result(@arguments, @w3cSignal, @w3c, @w3cLocal);
+  }
+
+
+
+.MojoShare a {
+	/* User style */
+	display: inline-block;		
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	margin: 10px 0 0 0;
+	border-radius: 10px; 
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+	color: #ffffff;
+
+    /* Default style */
+	cursor: pointer;
+	overflow: hidden;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+    background-repeat: no-repeat;
+	text-decoration: none;
+	-webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0 2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    &:hover {
+    	background-position: 0 -30px;
+    }
+    &:before {
+		font-family: "MojoSocial";    	
+    };
+}
+
+
+.auth {
+	@width: 280px;
+	@height: 50px;
+	@fontSize: 120%;
+	width: @width;
+	height: @height;
+	padding: 0 10px;
+	line-height: @height;
+	font-size: @fontSize;
+	&:before {
+		/* User style */
+		margin-right: 10px;
+
+		/* Default style */
+		font-size: @fontSize*1.3;
+		display: block;
+		float: left;
+	}
+}
+
+.share {
+	@width: auto;
+	@height: 40px;
+	@fontSize: 100%;
+	width: @width;
+	height: @height;
+	padding: 0 10px;
+	line-height: @height; 
+	font-size: @fontSize;
+	&:before {
+		font-size: @fontSize*1.3;
+		display: block;
+		float: left;
+		margin-right: 10px;
+	}
+}
+
+.share.square, .share.circle {
+	@width: 40px;
+	@height: @width;
+	@fontSize: 100%;
+	width: @width;
+	height: @height;
+	line-height: @height; 
+	text-align: center;
+	font-size: @fontSize;
+	padding: 0;
+	&:before {
+		font-size: @fontSize*1.3;
+		display: block;
+		text-align: center;
+		float: none !important;
+		margin: 0 !important;
+	}
+}
+
+.share.circle {
+	.border-radius(100px);
+}
+
+.share.minimalism {
+	background-image: none !important;
+	box-shadow: none !important;
+	text-shadow: none !important;
+	border: none !important;
+	border-radius: 0 !important;
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
+@FacebookC1:		 #324b8a;
+@FacebookC2:		 #4466a8; /* top */
+
+@TwitterC1:			 #0191ce;
+@TwitterC2:			 #01afdb;
+
+@VKC1:				 #5B7DA5;
+@VKC2:				 #44698F;
+
+@YandexC1:			 #EFA913; 
+@YandexC2:			 #FFCC00; 
+
+@LinkedinC1:		 #1B698F;
+@LinkedinC2:		 #439ABF;  
+
+@LastfmC1:			 #B70300;
+@LastfmC2:			 #DF1303; 
+
+@FlickrC1:			 #080808;
+@FlickrC2:			 #2C2C2C;
+
+@InstagramC1:		 #38668D; 
+@InstagramC2:		 #527FA3;
+
+@GooglePlusC1:		 #BC3D29;
+@GooglePlusC2:		 #DF4A32;
+
+@FoursquareC1:		 #2A8EBE;
+@FoursquareC2:		 #3EB9EA;
+
+@VimeoC1:			 #0A8EAF;
+@VimeoC2:			 #13AFD7;
+
+@GithubC1-1:		 #E0E0E0; /* color: #434343; text-shadow: 0 1px 0 rgba(255,255,255,0.5); */ 
+@GithubC1-2:		 #F8F8F8; 
+@GithubC2-1:		 #445E6E;
+@GithubC2-2:		 #7F97A5;
+@GithubC3-1:		 #9B9B9B;
+@GithubC3-2:		 #B4B4B4;
+
+@OpenIdC1:			 #E0E0E0;
+@OpenIdC2:			 #F8F8F8;
+
+@OdnoklassnikiC1:	 #E67401;
+@OdnoklassnikiC2:	 #FE8C19;
+
+@MailRuC1:			 #175797;
+@MailRuC2:			 #4D7EAF;
+
+@DribbleC1:			 #a12442;
+@DribbleC2:			 #c83f77; 
+
+@CloudSoundC1:		 #e05908; 
+@CloudSoundC2:		 #eca00f;   
+
+@TumblrC1:			 #243b4f;
+@TumblrC2:			 #335473;
+
+@YelpC1:			 #B00706;
+@YelpC2:			 #C41201;
+
+@PinterestC1_1:		 #ba1e23; /* Red */
+@PinterestC1_2:		 #df242a; 
+@PinterstC2_1:		 #E0E0E0; /* Gray - color: #df242a; text-shadow: 0 1px 0 rgba(255,255,255,0.5); */
+@PinterstC2_2:		 #F8F8F8;
+
+@BehanceC1_1:		 #027ED8; /* Blue */
+@BehanceC1_2:		 #0457E1;
+@BehanceC2_1: 		 #040404; /* Black */
+@BehanceC2_2:		 #333333;
+
+@BloggerC1:			 #FB903E;
+@BloggerC2:			 #FDA150;
+
+@LiveJournalC1_1:	 #102446; /* Blue */
+@LiveJournalC1_2:	 #164883;
+@LiveJournalC2_1:	 #E0E0E0; /* Gray - color: #434343; text-shadow: 0 1px 0 rgba(255,255,255,0.5); */
+@LiveJournalC2_2:	 #F8F8F8;
+
+@MySpaceC1:			 #272727;
+@MySpaceC2:			 #313131;
+
+@DeliciousC1:		 #E0E0E0;
+@DeliciousC2:		 #F8F8F8;
+
+@RedditC1:			 #E0E0E0;
+@RedditC2:			 #F8F8F8;
+
+@YouTubeC1:			 #932420;
+@YouTubeC2:			 #CB322C;
+
+@StumbleUponC1:		 #B04C38;
+@StumbleUponC2:		 #EA4B24;
+
+@FlattrC1_1:		 #538f13; /* Green */
+@FlattrC1_2:		 #66b115;
+@FlattrC2_1:		 #111111; /* Black */
+@FlattrC2_2:		 #252525;
+
+@SpotifyC1:			 #86B502;
+@SpotifyC2:			 #A4CE0D;
+
+@RdioC1:			 #006B9F;
+@RdioC2:			 #008FD5;
+
+@BitbucketC1:		 #205081;
+@BitbucketC2:		 #3270AF;
+
+@MoiKrugC1:			 #4989b6;
+@MoiKrugC2:			 #9ad3f2;
+
+@SlideShareC1:		 #252524;
+@SlideShareC2:		 #383533;
+
+@StackoverflowC1:	 #E0E0E0;
+@StackoverflowC2:	 #F8F8F8;
+
+@HabraHabrC1:		 #4D7285;
+@HabraHabrC2:		 #7FA0B0;
+
+@WeiboC1:			 #4787AA;
+@WeiboC2: 			 #599BBF;
+
+@RenrenC1:			 #31679C;
+@RenrenC2:			 #377BB5;
+
+@MixiC1:			 #AD8329;
+@MixiC2:			 #D2AD5C;
+
+@PocketC1_1:		 #c6474f; /* Pink */ 
+@PocketC1_2:		 #ee5d60;
+
+@LiveJournalC2_1:	 #E0E0E0; /* Gray - color: #ee5d60; text-shadow: 0 1px 0 rgba(255,255,255,0.5); */
+@LiveJournalC2_2:	 #F8F8F8;
+
+@EvernoteC1:		 #53a227;
+@EvernoteC2:		 #6BB130;
+
+@ShareC1:			 #E0E0E0; 
+@ShareC2:			 #F8F8F8;
+
+@MailC1:			 #E0E0E0; 
+@MailC2:			 #F8F8F8;
+
+@RSSC1:				 #E58900;
+@RSSC2:				 #FF9900;
+
+.Facebook {
+	background-color: @FacebookC1;
+	.background-image(linear-gradient(bottom, @FacebookC1, @FacebookC2)); 
+	border:1px solid darken(@FacebookC1, 15%);
+	border-radius: 10px;
+	&:before {
+		content: "\e000";
+	}
+}
+
+.Twitter{
+	background-color: @TwitterC1;
+	.background-image(linear-gradient(bottom, @TwitterC1, @TwitterC2 )); 
+	border:1px solid darken(@TwitterC1, 15%);
+	&:before {
+		content: "\e001";
+	}
+}
+
+.VK {
+	background-color: @VKC1;
+	.background-image(linear-gradient(bottom, @VKC1, @VKC2 )); 
+	border:1px solid darken(@VKC1, 15%);
+	&:before {
+		content: "\e002";
+	}
+}
+
+.Yandex{
+	background-color: @YandexC1;
+	.background-image(linear-gradient(bottom, @YandexC1, @YandexC2 )); 
+	border:1px solid darken(@YandexC1, 15%);
+	&:before {
+		content: "\e01c";
+	}
+}
+.Linkedin{
+	background-color: @LinkedinC1;
+	.background-image(linear-gradient(bottom, @LinkedinC1, @LinkedinC2 )); 
+	border:1px solid darken(@LinkedinC1, 15%);
+	&:before {
+		content: "\e003";
+	}
+}
+
+.Lastfm{
+	background-color: @LastfmC1;
+	.background-image(linear-gradient(bottom, @LastfmC1, @LastfmC2 )); 
+	border:1px solid darken(@LastfmC1, 15%);
+	&:before {
+		content: "\e018";
+	}
+}
+
+.Flickr{
+	background-color: @FlickrC1;
+	.background-image(linear-gradient(bottom, @FlickrC1, @FlickrC2 )); 
+	border:1px solid darken(@FlickrC1, 15%);
+	&:before {
+		content: "\e00c";
+	}
+}
+
+.Instagram{
+	background-color: @InstagramC1;
+	.background-image(linear-gradient(bottom, @InstagramC1, @InstagramC2 )); 
+	border:1px solid darken(@InstagramC1, 15%);
+	&:before {
+		content: "\e00d";
+	}
+}
+
+.GooglePlus{
+	background-color: @GooglePlusC1;
+	.background-image(linear-gradient(bottom, @GooglePlusC1, @GooglePlusC2 )); 
+	border:1px solid darken(@GooglePlusC1, 15%);
+	&:before {
+		content: "\e004";
+	}
+}
+
+.Foursquare{
+	background-color: @FoursquareC1;
+	.background-image(linear-gradient(bottom, @FoursquareC1, @FoursquareC2)); 
+	border:1px solid darken(@FoursquareC1, 15%);
+	&:before {
+		content: "\e01f";
+	}
+}
+
+.Vimeo{
+	background-color: @VimeoC1;
+	.background-image(linear-gradient(bottom, @VimeoC1, @VimeoC2)); 
+	border:1px solid darken(@VimeoC1, 15%);
+	&:before {
+		content: "\e011";
+	}
+}
+
+.Github{
+	background-color: @GithubC3-1;
+	.background-image(linear-gradient(bottom, @GithubC3-1, @GithubC3-2)); 
+	border:1px solid darken(@GithubC3-1, 15%);
+	&:before {
+		content: "\e01a";
+	}
+}
+
+.OpenId{
+	background-color: @OpenIdC1;
+	.background-image(linear-gradient(bottom, @OpenIdC1, @OpenIdC2)); 
+	border:1px solid darken(@OpenIdC1, 15%);
+	&:before {
+		content: "\e023";
+	}
+	color: #434343 !important; 
+	text-shadow: 0 1px 0 rgba(255,255,255,0.5) !important;
+}
+
+.Odnoklassniki{
+	background-color: @OdnoklassnikiC1;
+	.background-image(linear-gradient(bottom, @OdnoklassnikiC1, @OdnoklassnikiC2 )); 
+	border:1px solid darken(@OdnoklassnikiC1, 15%);
+	&:before {
+		content: "\e005";
+	}
+}
+
+.MailRu {
+	background-color: @MailRuC1;
+	.background-image(linear-gradient(bottom, @MailRuC1, @MailRuC2 )); 
+	border:1px solid darken(@MailRuC1, 15%);
+	&:before {
+		content: "\e006";
+	}
+}
+
+.Dribble {
+	background-color: @DribbleC1;
+	.background-image(linear-gradient(bottom, @DribbleC1, @DribbleC2 )); 
+	border:1px solid darken(@DribbleC1, 15%);
+	&:before {
+		content: "\e00f";
+	}
+}
+
+.CloudSound {
+background-color: @CloudSoundC1;
+.background-image(linear-gradient(bottom, @CloudSoundC1, @CloudSoundC2 )); 
+border:1px solid darken(@CloudSoundC1, 15%);
+	&:before {
+		content: "\e015";
+	}
+}
+
+.Tumblr {
+	background-color: @TumblrC1;
+	.background-image(linear-gradient(bottom, @TumblrC1, @TumblrC2 )); 
+	border:1px solid darken(@TumblrC1, 15%);
+	&:before {
+		content: "\e01e";
+	}
+}
+
+.Yelp {
+	background-color: @YelpC1;
+	.background-image(linear-gradient(bottom, @YelpC1, @YelpC2 )); 
+	border:1px solid darken(@YelpC1, 15%);
+	&:before {
+		content: "\e012";
+	}
+}
+
+.Pinterest {
+	background-color: @PinterestC1_1;
+	.background-image(linear-gradient(bottom, @PinterestC1_1, @PinterestC1_2 )); 
+	border:1px solid darken(@PinterestC1_1, 15%);
+	&:before {
+		content: "\e00b";
+	}
+}
+
+.Behance {
+	background-color: @BehanceC1_2;
+	.background-image(linear-gradient(bottom, @BehanceC1_2, @BehanceC1_2 )); 
+	border:1px solid darken(@BehanceC1_2, 15%);
+	&:before {
+		content: "\e00e";
+	}
+}
+
+.Blogger {
+	background-color: @BloggerC1;
+	.background-image(linear-gradient(bottom, @BloggerC1, @BloggerC2 )); 
+	border:1px solid darken(@BloggerC1, 15%);
+	&:before {
+		content: "\e019";
+	}
+}
+
+.LiveJournal {
+	background-color: @LiveJournalC1_1;
+	.background-image(linear-gradient(bottom, @LiveJournalC1_1, @LiveJournalC1_2 )); 
+	border:1px solid darken(@LiveJournalC1_1, 15%);
+	&:before {
+		content: "\e007";
+	}
+}
+
+.MySpace {
+	background-color: @MySpaceC1;
+	.background-image(linear-gradient(bottom, @MySpaceC1, @MySpaceC2 )); 
+	border:1px solid darken(@MySpaceC1, 15%);
+	&:before {
+		content: "\e008";
+	}
+}
+
+.Delicious {
+	background-color: @DeliciousC1;
+	.background-image(linear-gradient(bottom, @DeliciousC1, @DeliciousC2 )); 
+	border:1px solid darken(@DeliciousC1, 15%);
+	&:before {
+		content: "\e009";
+	}
+	color: #434343 !important;
+	text-shadow: 0 1px 0 #ffffff !important;
+}
+
+.Reddit {
+	background-color: @RedditC1;
+	.background-image(linear-gradient(bottom, @RedditC1, @RedditC2 )); 
+	border:1px solid darken(@RedditC1, 15%);
+	&:before {
+		content: "\e00a";
+	}
+	color: #434343 !important;
+	text-shadow: 0 1px 0 #ffffff !important;
+}
+
+.YouTube {
+	background-color: @YouTubeC1;
+	.background-image(linear-gradient(bottom, @YouTubeC1, @YouTubeC2 )); 
+	border:1px solid darken(@YouTubeC1, 15%);
+	&:before {
+		content: "\e010";
+	}
+}
+
+.StumbleUpon {
+	background-color: @StumbleUponC1;
+	.background-image(linear-gradient(bottom, @StumbleUponC1, @StumbleUponC2 )); 
+	border:1px solid darken(@StumbleUponC1, 15%);
+	&:before {
+		content: "\e013";
+	}
+}
+
+.Flattr {
+	background-color: @FlattrC1_1;
+	.background-image(linear-gradient(bottom, @FlattrC1_1, @FlattrC1_2 )); 
+	border:1px solid darken(@FlattrC1_1, 15%);
+	&:before {
+		content: "\e014";
+	}
+}
+
+.Spotify {
+	background-color: @SpotifyC1;
+	.background-image(linear-gradient(bottom, @SpotifyC1, @SpotifyC2 )); 
+	border:1px solid darken(@SpotifyC1, 15%);
+	&:before {
+		content: "\e016";
+	}	
+}
+
+.Rdio {
+	background-color: @RdioC1;
+	.background-image(linear-gradient(bottom, @RdioC1, @RdioC2 )); 
+	border:1px solid darken(@RdioC1, 15%);
+	&:before {
+		content: "\e017";
+	}	
+}
+
+.Bitbucket {
+	background-color: @BitbucketC1;
+	.background-image(linear-gradient(bottom, @BitbucketC1, @BitbucketC2 )); 
+	border:1px solid darken(@BitbucketC1, 15%);
+	&:before {
+		content: "\e01b";
+	}	
+}
+
+.MoiKrug {
+	background-color: @MoiKrugC1;
+	.background-image(linear-gradient(bottom, @MoiKrugC1, @MoiKrugC2 )); 
+	border:1px solid darken(@MoiKrugC2, 15%);
+	&:before {
+		content: "\e01d";
+	}	
+}
+
+.SlideShare {
+	background-color: @SlideShareC1;
+	.background-image(linear-gradient(bottom, @SlideShareC1, @SlideShareC2 )); 
+	border:1px solid darken(@SlideShareC1, 15%);
+	&:before {
+		content: "\e020";
+	}	
+}
+
+.Stackoverflow {
+	background-color: @StackoverflowC1;
+	.background-image(linear-gradient(bottom, @StackoverflowC1, @StackoverflowC2 )); 
+	border:1px solid darken(@StackoverflowC1, 15%);
+	&:before {
+		content: "\e021";
+	}	
+	color: #434343 !important;
+	text-shadow: 0 1px 0 #ffffff !important;
+}
+
+.HabraHabr {
+	background-color: @HabraHabrC1;
+	.background-image(linear-gradient(bottom, @HabraHabrC1, @HabraHabrC2 )); 
+	border:1px solid darken(@HabraHabrC1, 15%);
+	&:before {
+		content: "\e022";
+	}	
+}
+
+.Weibo {
+	background-color: @WeiboC1;
+	.background-image(linear-gradient(bottom, @WeiboC1, @WeiboC2 )); 
+	border:1px solid darken(@WeiboC1, 15%);
+	&:before {
+		content: "\e024";
+	}	
+}
+
+.Renren {
+	background-color: @RenrenC1;
+	.background-image(linear-gradient(bottom, @RenrenC1, @RenrenC2 )); 
+	border:1px solid darken(@RenrenC1, 15%);
+	&:before {
+		content: "\e025";
+	}	
+}
+
+.Mixi {
+	background-color: @MixiC1;
+	.background-image(linear-gradient(bottom, @MixiC1, @MixiC2 )); 
+	border:1px solid darken(@MixiC1, 15%);
+	&:before {
+		content: "\e026";
+	}	
+}
+
+.Pocket {
+	background-color: @PocketC1_1;
+	.background-image(linear-gradient(bottom, @PocketC1_1, @PocketC1_2 )); 
+	border:1px solid darken(@PocketC1_1, 15%);
+	&:before {
+		content: "\e027";
+	}
+}
+
+.Evernote {
+	background-color: @EvernoteC1;
+	.background-image(linear-gradient(bottom, @EvernoteC1, @EvernoteC2 )); 
+	border:1px solid darken(@EvernoteC1, 15%);
+	&:before {
+		content: "\e02a";
+	}
+}
+
+.Share {
+	background-color: @ShareC1;
+	.background-image(linear-gradient(bottom, @ShareC1, @ShareC2 )); 
+	border:1px solid darken(@ShareC1, 15%);
+	&:before {
+		content: "\e02b";
+	}
+	color: #434343 !important; 
+	text-shadow: 0 1px 0 rgba(255,255,255,0.5) !important;
+}
+
+.Mail {
+	background-color: @MailC1;
+	.background-image(linear-gradient(bottom, @MailC1, @MailC2 )); 
+	border:1px solid darken(@MailC1, 15%);
+	&:before {
+		content: "\e02c";
+	}
+	color: #434343 !important; 
+	text-shadow: 0 1px 0 rgba(255,255,255,0.5) !important;
+}
+
+.RSS {
+	background-color: @RSSC1;
+	.background-image(linear-gradient(bottom, @RSSC1, @RSSC2 )); 
+	border:1px solid darken(@RSSC1, 15%);
+	&:before {
+		content: "\e02d";
+	};
+}
+
+
+.MojoRibbon(@width, @height, @deg, @valign) {
+	width: @width;
+	height: @height;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	.defineDegree(@deg, @valign) when (@deg < 0) and (@valign = top) {
+		@degree: -@deg;
+		top: @countHeight;
+		left: @countWidth;	
+		-webkit-transform: rotate(@deg);
+		-moz-transform: rotate(@deg);
+		-o-transform: rotate(@deg);
+		-ms-transform: rotate(@deg);
+		transform: rotate(@deg);
+	};
+	.defineDegree(@deg, @valign) when (@deg < 0) and (@valign = bottom) {
+		@degree: -@deg;
+		bottom: @countHeight;
+		right: @countWidth;	
+		-webkit-transform: rotate(@deg);
+		-moz-transform: rotate(@deg);
+		-o-transform: rotate(@deg);
+		-ms-transform: rotate(@deg);
+		transform: rotate(@deg);
+	};
+	.defineDegree(@deg, @valign) when (@deg > 0) and (@valign = top) {
+		@degree: @deg;
+		top: @countHeight;
+		right: @countWidth;
+		-webkit-transform: rotate(@degree);
+		-moz-transform: rotate(@degree);
+		-o-transform: rotate(@degree);
+		-ms-transform: rotate(@degree);
+		transform: rotate(@degree);
+	};
+	.defineDegree(@deg, @valign) when (@deg > 0) and (@valign = bottom) {
+		@degree: @deg;
+		bottom: @countHeight;
+		left: @countWidth;
+		-webkit-transform: rotate(@degree);
+		-moz-transform: rotate(@degree);
+		-o-transform: rotate(@degree);
+		-ms-transform: rotate(@degree);
+		transform: rotate(@degree);
+	};
+	.defineDegree(@deg, @valign) when (@deg = 0) {
+		@degree: @deg;
+		top: 0;
+		left: 0;
+	};
+	.defineDegree(@deg, @valign);
+	@angleB: 90-@degree;
+	@angleB2: @angleB;
+	@sideA: round(sin(@degree), 3)*@width;
+	@sideB: round(sin(@angleB), 3)*@width;
+	@sideB2: round(sin(@angleB2), 3)*@height;
+	@sideA2: round(sin(@degree), 3)*@height;
+	@countHeight: @sideA/2 - @height/2 - @sideB2/2;
+	@countWidth: -((@width)-(@sideB))/2 - @sideA2/2;	
+}
+
+
+
